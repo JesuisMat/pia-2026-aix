@@ -232,6 +232,8 @@ details.ann summary .chev { width: 22px; height: 22px; border-radius: 50%; backg
 details.ann[open] summary .chev { transform: rotate(180deg); }
 details.ann .in { padding: 0 20px 20px; font-size: 14px; }
 details.ann .in p, details.ann .in li { color: var(--ink); }
+details.ann .in .prompt p { color: rgba(255,255,255,.92); }
+details.ann .in .prompt .lbl { color: var(--blue-glow); }
 
 .mail { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; font-size: 14px; line-height: 1.55; }
 .mail .hd { font-size: 12px; color: var(--slate); border-bottom: 1px solid var(--line); padding-bottom: 10px; margin-bottom: 12px; }
@@ -282,9 +284,12 @@ details.ann .in p, details.ann .in li { color: var(--ink); }
   .rv, .rv-group > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .bar .fill { width: var(--w) !important; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .card, .callout, .decision, .layer, .rule, .slot, .stat, .mail, .horizon, .quote, .prompt, .bar { break-inside: avoid; }
+  .card, .callout, .decision, .layer, .rule, .slot, .stat, .horizon, .quote, .prompt, .bar { break-inside: avoid; }
   .tbl tr { break-inside: avoid; }
-  .two, .stats, .decisions, .stack, .agenda, .rules { break-inside: auto; }
+  .tbl-wrap { overflow: visible; }
+  .tbl { border-radius: 0; }
+  .two, .stats, .decisions, .stack, .agenda, .rules, .mail, details.ann, details.ann .in { break-inside: auto; }
+  .hero { min-height: 240mm; display: flex; align-items: center; }
   details.ann { display: block; }
   details.ann summary .chev { display: none; }
   details.ann .in { display: block; }
