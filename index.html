@@ -317,7 +317,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     <li><a href="#s9"><span class="n">09</span>Après le séminaire</a></li>
     <li><a href="#s10"><span class="n">10</span>Annexes</a></li>
   </ol>
-  <div class="sub"><strong>Version 1 · 14 septembre 2026</strong><br>Matthieu Baric pour Antoine Eberhard, David Rousseau en copie.<br>Lecture : environ 15 minutes. Annexes à la fin.</div>
+  <div class="sub"><strong>Version 1.1 · 14 septembre 2026</strong><br>Matthieu Baric pour Antoine Eberhard, David Rousseau en copie.<br>Lecture : environ 15 minutes. Annexes à la fin.</div>
 </nav>
 
 <main>
@@ -354,12 +354,12 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
   <div class="decisions rv-group">
     <div class="decision">
       <div class="n">1</div>
-      <div><h5>Confirmer les rôles demandés le 10 septembre</h5><p>Power Platform Administrator, plus Environment Maker et System Customizer sur l'environnement de test. L'environnement de test existe déjà (DAVANT PREPROD) ; le rôle tenant, lui, n'est attribué à personne à ce jour. C'est ce qui me permet d'activer Copilot dans Dynamics et de construire les agents sans passer par Harold à chaque étape.</p></div>
+      <div><h5>Acter un périmètre d'accès proportionné : pas d'admin sur la production</h5><p>Je retire la demande d'accès administrateur sur le CRM de production. L'environnement de test (DAVANT PREPROD), où je suis déjà administrateur, suffit pour construire et tester. Si Harold confirme que les fonctions Copilot de Dynamics sont déjà actives, le rôle Power Platform Administrator n'est pas nécessaire pour le 1<sup>er</sup> octobre ; il sera réexaminé en novembre selon ce que les agents devront écrire dans le CRM. Détail par usage en <a href="#annA">annexe A</a>.</p></div>
       <div class="due"><span class="d">18/09</span><span class="w">vendredi</span></div>
     </div>
     <div class="decision">
       <div class="n">2</div>
-      <div><h5>Arbitrer trois tâches pour Harold, datées</h5><p>Installer le Sales agent dans le tenant Microsoft 365, activer le contrôle d'oversharing SharePoint sur les bibliothèques sensibles, créer le dossier SharePoint du référentiel. Accord le 18, livraison le 25. Le reste du setup est à ma charge une fois la décision 1 prise.</p></div>
+      <div><h5>Confier quatre actions datées à Harold</h5><p>Installer officiellement le Sales agent dans Microsoft 365 ; vérifier que les 17 participants ont un rôle vendeur dans Dynamics (et que Copilot y est actif) ; créer le dossier SharePoint du référentiel ; contrôler les partages trop larges sur SharePoint. Accord le 18, livraison le 25. Le reste du setup se fait sur PREPROD, à ma charge, sans droits supplémentaires.</p></div>
       <div class="due"><span class="d">25/09</span><span class="w">livraison</span></div>
     </div>
     <div class="decision">
@@ -396,7 +396,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
 
   <div class="callout key rv">
     <div class="cic"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/></svg></div>
-    <div><h5>Budget associé, en une ligne</h5><p>Aucune licence à acheter avant le séminaire. Coût de septembre : le paiement à l'usage de l'assistant DAVANT, plafonné à 100 € par mois. La décision licences Copilot (plafond ~460 $ par mois pour 22 personnes) se prend en novembre, sur usage réel. Détail en section 05.</p></div>
+    <div><h5>Budget associé, en une ligne</h5><p>Aucune licence à acheter avant le séminaire, aucune architecture mise en production sur des serveurs Microsoft sans validation préalable. Coût de septembre : le paiement à l'usage de l'assistant DAVANT, plafonné à 100 € par mois par une alerte de budget. La décision licences Copilot (de 240 à 660 $ par mois selon l'option, pour 22 personnes) se prend en novembre, sur usage réel. Les scénarios chiffrés sont en <a href="#s5">section 05</a>.</p></div>
   </div>
 </section>
 
@@ -550,6 +550,37 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     <p>La bonne nouvelle, vérifiée sur mon téléphone le 13 septembre : la licence Sales Enterprise donne déjà accès au <strong>Sales agent</strong> dans Copilot Chat, en mode « données CRM uniquement ». Interroger ses opportunités, dicter un compte rendu qui se range sur la bonne fiche, mettre à jour une opportunité à la voix avec confirmation : tout cela fonctionne aujourd'hui, sans achat. Microsoft l'écrit noir sur blanc : « si vous avez une licence Dynamics 365 Sales Enterprise mais pas Microsoft 365 Copilot, vous pouvez utiliser le Sales agent avec les données CRM uniquement ».</p>
   </div>
 
+  <h3 class="rv" id="s5-actuel">Ce que DAVANT paie aujourd'hui, et ce qu'une licence Copilot changerait</h3>
+  <div class="body rv">
+    <p>Point de vocabulaire d'abord, parce qu'il a créé de la confusion : <strong>Microsoft 365 Copilot est un module complémentaire</strong> (add-on) qui s'ajoute à une licence Microsoft 365 existante, il ne la remplace pas. Business Standard reste la base (messagerie, Office, Teams, SharePoint) ; Copilot vient par-dessus, pour les personnes à qui on l'assigne, et seulement elles. Le Sales agent, lui, est porté par Dynamics 365 Sales Enterprise : c'est pour ça qu'il fonctionne déjà.</p>
+  </div>
+  <div class="tbl-wrap rv">
+  <table class="tbl">
+    <thead><tr><th>Licence en place (inventaire du 13/09)</th><th>Sièges</th><th>Ce qu'elle apporte côté IA, sans rien acheter</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Microsoft 365 Business Standard</strong></td><td>39 (35 assignées)</td><td>Copilot Chat (chat sécurisé, web) et la base éligible pour ajouter Copilot Business.</td></tr>
+      <tr><td><strong>Dynamics 365 Sales Enterprise</strong></td><td>38 (34 assignées)</td><td>Le Sales agent en mode « données CRM uniquement » (requêtes, notes dictées, mise à jour d'opportunité à la voix) et le Copilot natif dans l'app Dynamics (résumés, questions sur ses fiches), à activer par un administrateur si ce n'est pas déjà fait.</td></tr>
+      <tr><td><strong>Business Central Premium</strong></td><td>14 (10 assignées)</td><td>Le Copilot natif de Business Central (rapprochement bancaire assisté, descriptions produit). Hors périmètre du séminaire.</td></tr>
+      <tr><td><strong>Power BI Pro</strong></td><td>31 (30 assignées)</td><td>Rien de nouveau côté IA ; c'est le support du chantier fiabilisation.</td></tr>
+      <tr><td><strong>Copilot Studio Viral Trial</strong></td><td>essai, 3 utilisateurs</td><td>Un essai en libre-service de l'atelier de construction d'agents. Pas une licence, ne rien construire de durable dessus.</td></tr>
+      <tr><td><strong>Microsoft 365 Copilot</strong></td><td class="no">0</td><td>Rien à ce jour.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="body rv">
+    <p>Deux façons d'ajouter Copilot Business, le jour où on le décide, à confirmer sur devis auprès d'Absys Cyborg :</p>
+  </div>
+  <div class="two rv-group">
+    <div class="card">
+      <h5>Option A · Module complémentaire</h5>
+      <p>On garde Business Standard tel quel et on ajoute « Microsoft 365 Copilot Business » aux personnes choisies. Tarif catalogue 21 $ par utilisateur et par mois en engagement annuel (25 $ en mensuel), avec une promotion à 18 $ annoncée jusqu'au 31 décembre 2026. Souple : on licencie 5 personnes ou 22, sans toucher aux autres.</p>
+    </div>
+    <div class="card">
+      <h5>Option B · Offre groupée « Business Standard avec Copilot »</h5>
+      <p>On bascule la licence des personnes concernées vers l'offre groupée, catalogue 23,50 $ par utilisateur et par mois depuis juillet 2026, contre 12,50 $ pour Business Standard seul. Le surcoût réel est donc d'environ 11 $ par personne, à condition que le devis en euros confirme ce prix. C'est l'option à demander en premier.</p>
+    </div>
+  </div>
+
   <h3 class="rv">Les quatre étages, vulgarisés</h3>
   <div class="tbl-wrap rv">
   <table class="tbl">
@@ -604,8 +635,26 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
         <li>Azure pour les outils maison : plafond d'alerte 50 € par mois</li>
         <li>Licences Copilot : 0 € jusqu'à la décision de novembre</li>
       </ul>
-      <p style="margin-top:10px">Deux vérifications demandées à Harold : la disponibilité de l'essai Copilot sur le tenant, et le devis en euros Business vs Enterprise.</p>
+      <p style="margin-top:10px">Deux vérifications demandées à Harold : la disponibilité de l'essai Copilot sur le tenant, et le devis en euros des options A et B.</p>
     </div>
+  </div>
+
+  <h3 class="rv" id="s5-scenarios">Réponse à la fourchette « 300 à 2 000 € par mois »</h3>
+  <div class="body rv">
+    <p>Harold a raison de poser la question du coût avant toute mise en production. La fourchette qu'il évoque décrit deux situations précises, et aucune des deux n'est proposée avant novembre. Voici les scénarios, pour 22 personnes, à partir des tarifs catalogue en dollars (le devis en euros peut différer de quelques pourcents).</p>
+  </div>
+  <div class="tbl-wrap rv">
+  <table class="tbl">
+    <thead><tr><th>Scénario</th><th>Coût mensuel</th><th>Quand</th><th>Ce qui le déclenche</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0 · Séminaire</strong> : licences existantes + assistant DAVANT à l'usage, plafonné</td><td class="ok">0 à 100 €</td><td>Septembre, octobre</td><td>Une politique de facturation à l'usage avec budget et alerte automatique, que je crée avec le rôle AI Administrator déjà attribué. Aucun serveur, aucune architecture.</td></tr>
+      <tr><td><strong>1 · Essai</strong> : Microsoft 365 Copilot 30 jours pour managers, direction, référents</td><td class="ok">0 €</td><td>Octobre</td><td>Une demande d'essai auprès de Microsoft ou d'Absys Cyborg, si disponible sur le tenant.</td></tr>
+      <tr><td><strong>2 · Licences ciblées</strong> : 8 personnes (managers, direction, référents, moi) en option B</td><td class="mid">~90 $ de surcoût</td><td>Novembre, sur usage réel</td><td>Décision d'Antoine après le comité de novembre.</td></tr>
+      <tr><td><strong>3 · Toute l'équipe</strong> : 22 personnes, option B (~11 $) ou option A (18 à 21 $)</td><td class="mid">~240 à ~460 $</td><td>Au plus tôt novembre</td><td>Décision d'Antoine. C'est le bas de la fourchette d'Harold.</td></tr>
+      <tr><td><strong>4 · Enterprise</strong> : 22 personnes à 30 $ (SKU réservé aux grands comptes, non pertinent ici)</td><td class="no">~660 $</td><td>Jamais proposé</td><td>Le milieu de la fourchette d'Harold correspond à ce SKU, ou à un usage sans plafond.</td></tr>
+      <tr><td><strong>5 · Agents et Foundry sans plafond</strong></td><td class="no">non borné</td><td>Jamais proposé</td><td>Le haut de la fourchette suppose des agents à la consommation sans budget d'alerte. Toute mise en production passe par un chiffrage validé, c'est la règle de ce document.</td></tr>
+    </tbody>
+  </table>
   </div>
 </section>
 
@@ -681,19 +730,20 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     </div>
   </div>
 
-  <h3 class="rv">Les quinze jours avant le séminaire, jour par jour</h3>
+  <h3 class="rv" id="s6-15jours">Les quinze jours avant le séminaire, jour par jour</h3>
+  <p class="rv" style="color:var(--slate);font-size:14px;max-width:70ch">Chaque ligne renvoie à la partie du document qui l'explique. Les dates sont des butoirs : ce qui est fait avant est bienvenu.</p>
   <div class="tbl-wrap rv">
   <table class="tbl">
-    <thead><tr><th>Date</th><th>Quoi</th><th>Qui</th></tr></thead>
+    <thead><tr><th>Date</th><th>Quoi, et pourquoi ce jour-là</th><th>Qui</th><th>Réf.</th></tr></thead>
     <tbody>
-      <tr><td>Lun 15/09</td><td>Demande de l'essai Copilot 30 jours ; contenu du référentiel demandé à Julien et Michaël</td><td>Matthieu, Harold</td></tr>
-      <tr><td>Ven 18/09</td><td>Décisions 1, 2 et 3 ; rôles attribués</td><td>Antoine</td></tr>
-      <tr><td>Lun 22/09</td><td>Charte validée ; Copilot activé dans Dynamics ; dossier SharePoint créé</td><td>Antoine, Matthieu, Harold</td></tr>
-      <tr><td>Mer 24/09</td><td>Contenu référentiel reçu ; mail de pré-travail envoyé ; session direction 45 min dans la semaine</td><td>Julien, Michaël, Antoine</td></tr>
-      <tr><td>Ven 25/09</td><td>Sales agent installé, oversharing contrôlé ; assistant DAVANT en test</td><td>Harold, Matthieu</td></tr>
-      <tr><td>Ven 26/09</td><td>Test complet avec Olivier et Steeven sur leurs comptes et téléphones</td><td>Matthieu, référents</td></tr>
-      <tr><td>Lun 29/09</td><td>Fiches prompts imprimées, plan B vérifié (démo depuis mon compte, hands-on sur Copilot Chat)</td><td>Matthieu</td></tr>
-      <tr><td>Jeu 01/10</td><td>Demi-journée IA, 9h00 à 12h30, Best Western Le Gallice, Aix-en-Provence</td><td>Tous</td></tr>
+      <tr><td>Lun 15/09</td><td><strong>Point de clarification avec Antoine</strong> (et Harold si possible) sur le périmètre d'accès et le budget, suite à son mail. <strong>Demande de l'essai Copilot 30 jours.</strong> <strong>Contenu du référentiel</strong> demandé à Julien et Michaël (grilles, process du premier bon de commande, motifs, délais), avec un gabarit d'une page par fiche.</td><td>Matthieu, Antoine, Harold</td><td><a href="#s1">Décisions 1, 2</a> · <a href="#s5-scenarios">Scénarios</a> · <a href="#annA">Annexe A, ontologie</a></td></tr>
+      <tr><td>Ven 18/09</td><td><strong>Décisions 1, 2 et 3 actées</strong> : périmètre d'accès proportionné, quatre actions Harold avec dates, demi-journée choisie et ouverture David + Antoine confirmée. C'est la dernière date qui laisse une semaine pleine de préparation avant le test à J-5.</td><td>Antoine</td><td><a href="#s1">Section 01</a></td></tr>
+      <tr><td>Lun 22/09</td><td><strong>Charte v1 validée</strong> (elle part dans le mail du 24). <strong>Copilot dans Dynamics vérifié actif</strong> par Harold, sinon activé. <strong>Dossier SharePoint « Référentiel commercial » créé</strong> avec des droits propres, pour que j'y dépose les fiches dès qu'elles arrivent.</td><td>Antoine, Harold</td><td><a href="#s8">Charte</a> · <a href="#annA">Annexe A</a></td></tr>
+      <tr><td>Mer 24/09</td><td><strong>Contenu référentiel reçu</strong> de Julien et Michaël, mis en forme et déposé. <strong>Mail de pré-travail envoyé par Antoine</strong> (J-7 pour installer l'app et lire la charte). <strong>Session direction 45 min</strong> calée dans la semaine : David et Antoine manipulent Sales agent et assistant DAVANT.</td><td>Julien, Michaël, Antoine, Matthieu</td><td><a href="#annB">Annexe B, le mail</a> · <a href="#s1">Décision 5</a></td></tr>
+      <tr><td>Ven 25/09</td><td><strong>Livraison des quatre actions Harold</strong> : Sales agent installé, rôles CRM vérifiés, contrôle d'oversharing fait, dossier référentiel opérationnel. <strong>Assistant DAVANT branché et en test</strong> sur PREPROD puis sur le dossier réel, politique de facturation à l'usage plafonnée en place.</td><td>Harold, Matthieu</td><td><a href="#s1">Décision 2</a> · <a href="#annA">Annexe A, qui fait quoi</a></td></tr>
+      <tr><td>Ven 26/09</td><td><strong>Test complet à J-5</strong> avec Olivier et Steeven, sur leurs comptes et leurs iPhones, séquence par séquence des deux ateliers (dictée, mise à jour d'opportunité, question au référentiel). Ce qui ne marche pas ce jour-là sort du programme ou passe en démo.</td><td>Matthieu, référents</td><td><a href="#s7-ateliers">Ateliers</a> · <a href="#annC">Annexe C, prompts</a></td></tr>
+      <tr><td>Lun 29/09</td><td><strong>Fiches prompts imprimées</strong> (une page par métier). <strong>Plan B vérifié</strong> : démo depuis mon compte, manipulation sur Copilot Chat si un accès manque, webinaire de rattrapage à J+7 pré-réservé. Wifi de l'hôtel et domaine <code>*.cloud.microsoft</code> à tester la veille sur place.</td><td>Matthieu</td><td><a href="#s7">Logistique</a></td></tr>
+      <tr><td>Jeu 01/10</td><td><strong>Demi-journée IA</strong>, 9h00 à 12h30, Best Western Le Gallice, Aix-en-Provence. Tronc commun puis ateliers en alternance. Sondage à chaud en fin de matinée, canal Teams ouvert dans la foulée.</td><td>Tous</td><td><a href="#s7">Section 07</a> · <a href="#s9">Après</a></td></tr>
     </tbody>
   </table>
   </div>
@@ -736,7 +786,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     <div class="slot"><div class="t">10h15<small>15 min</small></div><div><h5>Le cadre et la suite</h5><div class="who">Antoine (charte, 3 min), puis Matthieu</div><p>Les sept règles, les référents nommés, le canal Teams, les office hours, ce qui arrive en novembre. Annonce des deux ateliers et de l'ordre de passage.</p></div></div>
   </div>
 
-  <h3 class="rv">10h30 à 11h25 et 11h35 à 12h30 · Deux ateliers en alternance</h3>
+  <h3 class="rv" id="s7-ateliers">10h30 à 11h25 et 11h35 à 12h30 · Deux ateliers en alternance</h3>
   <div class="two rv-group">
     <div class="card">
       <h5><span class="cic"><svg class="ic" viewBox="0 0 24 24"><path d="M12 22c5-4 8-8 8-13a8 8 0 1 0-16 0c0 5 3 9 8 13Z"/><circle cx="12" cy="9" r="2.5"/></svg></span>Atelier Réseau (FID), 55 minutes</h5>
@@ -852,17 +902,17 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     </div>
   </div>
 
-  <details class="ann rv">
+  <details class="ann rv" id="annA">
     <summary>A · Setup technique détaillé <span class="chev"><svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
     <div class="in">
       <h4>Qui fait quoi, avec quel rôle</h4>
       <div class="tbl-wrap"><table class="tbl">
         <thead><tr><th>Tâche</th><th>Qui</th><th>Rôle nécessaire</th><th>État au 13/09</th></tr></thead>
         <tbody>
-          <tr><td>Attribuer le rôle Power Platform Administrator (aucun titulaire dans le tenant)</td><td>Harold ou Antoine</td><td>Global Administrator</td><td class="no">À faire</td></tr>
-          <tr><td>Environnement de test dédié (DAVANT PREPROD, sandbox)</td><td>Fait</td><td>Administrateur système sur PREPROD</td><td class="ok">En place</td></tr>
-          <tr><td>Activer Copilot dans Dynamics 365 Sales (fonctions génératives, consentement)</td><td>Matthieu</td><td>Power Platform Administrator</td><td class="mid">Dès la décision 1</td></tr>
-          <tr><td>Vérifier les rôles CRM Salesperson ou Sales Manager des 17 participants</td><td>Matthieu avec Harold</td><td>Administrateur système sur la prod</td><td class="mid">À faire</td></tr>
+          <tr><td>Rôle Power Platform Administrator au niveau tenant</td><td>Personne pour l'instant</td><td>Global Administrator pour l'attribuer</td><td class="mid">Non nécessaire pour le 01/10 si les quatre actions ci-dessous sont faites ; à réexaminer en novembre</td></tr>
+          <tr><td>Environnement de test dédié (DAVANT PREPROD, sandbox) : construction et test des agents</td><td>Fait</td><td>Administrateur système sur PREPROD</td><td class="ok">En place, suffisant</td></tr>
+          <tr><td>Vérifier que Copilot est actif dans Dynamics 365 Sales (résumés, chat sur les fiches), l'activer sinon</td><td>Harold</td><td>Administrateur système sur la prod</td><td class="mid">Harold indique que c'est déjà actif : à confirmer le 22/09</td></tr>
+          <tr><td>Vérifier les rôles CRM Salesperson ou Sales Manager des 17 participants</td><td>Harold</td><td>Administrateur système sur la prod</td><td class="mid">À faire pour le 25/09</td></tr>
           <tr><td>Installer le Sales agent (apps intégrées Microsoft 365) et activer Sales Chat</td><td>Harold</td><td>Rôle admin Microsoft 365</td><td class="mid">Fonctionne déjà côté utilisateur, à officialiser</td></tr>
           <tr><td>Contrôle d'oversharing sur les bibliothèques sensibles</td><td>Harold</td><td>SharePoint Administrator</td><td class="no">À faire</td></tr>
           <tr><td>Dossier SharePoint « Référentiel commercial » avec droits propres</td><td>Harold</td><td>SharePoint Administrator</td><td class="no">À faire</td></tr>
@@ -910,7 +960,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     </div>
   </details>
 
-  <details class="ann rv">
+  <details class="ann rv" id="annB">
     <summary>B · Mail de pré-travail, à envoyer par Antoine le 24 septembre <span class="chev"><svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
     <div class="in">
       <div class="mail">
@@ -927,7 +977,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     </div>
   </details>
 
-  <details class="ann rv">
+  <details class="ann rv" id="annC">
     <summary>C · Fiches prompts par métier <span class="chev"><svg class="ic" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary>
     <div class="in">
       <h4>La structure d'un bon prompt, en quatre lignes</h4>
@@ -972,7 +1022,9 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
         <li>Audit DAVANT : 7 entretiens (Michaël 30/07, Julien 03/08, Audrey et Steeven 03/08, Olivier 10/08, Karen 13/08, Kerdaffrec 25/08), sondage « IA au quotidien, Réseau et Ventes », 13 réponses au 28/08 ; restitutions David 11/08 et Antoine 26/08.</li>
         <li>Inventaire des licences et rôles : Microsoft Graph et centre d'administration, 13/09/2026 ; sonde en lecture seule de l'environnement DAVANT PREPROD (champs du rendez-vous, solutions installées).</li>
         <li>Microsoft Learn : « Use Sales agent in Microsoft 365 Copilot », « Sales agent chat on mobile » (01/07/2026), « Licensing and cost considerations for Copilot extensibility options » (18/06/2026), « Microsoft Copilot pay-as-you-go service overview » (18/08/2026), « Best practices for building declarative agents », « What is Foundry IQ », « What is Fabric IQ ».</li>
-        <li>Tarifs publics 2026 : Microsoft 365 Copilot Business (21 $ annuel, 25 $ mensuel), Copilot Studio (pack 25 000 crédits à 200 $, ou 0,01 $ le crédit), FullEnrich (29 $ pour 500 crédits), Google Places API.</li>
+        <li>Microsoft Learn, « License options for Microsoft Copilot » (18/08/2026) : Copilot est un module complémentaire aux plans Business Basic, Standard, Premium et Apps for Business ; Copilot Chat web inclus sans surcoût, chat « travail » réservé à la licence.</li>
+        <li>Tarifs publics 2026 : Microsoft 365 Copilot Business (21 $ annuel, 25 $ mensuel, promotion 18 $ annoncée jusqu'au 31/12/2026), offre groupée « Business Standard avec Copilot » (23,50 $ depuis juillet 2026, contre 12,50 $ pour Business Standard seul), Copilot Studio (pack 25 000 crédits à 200 $, ou 0,01 $ le crédit), FullEnrich (29 $ pour 500 crédits), Google Places API. Devis en euros à demander à Absys Cyborg.</li>
+        <li>Identifiants de licence Microsoft Entra : CCIBOTS_PRIVPREV_VIRAL = « Microsoft Copilot Studio Viral Trial », essai en libre-service.</li>
         <li>Institut Montaigne, « IA en entreprise : le guide d'une intégration maîtrisée », juin 2026 (niveaux d'intégration, désapprentissage, gouvernance, portabilité).</li>
         <li>Cross Data, livre blanc « Former à l'IA sans se tromper » (les cinq erreurs, la charte, le parcours en quatre étapes) ; Microsoft 365 Copilot Adoption Playbook.</li>
         <li>Code du travail, article L1222-4 (information des salariés sur les dispositifs de suivi de l'activité).</li>
@@ -983,7 +1035,7 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
 
 <footer class="foot">
   <span class="mark"><svg viewBox="436.56 351.9 1067.3 328.85" xmlns="http://www.w3.org/2000/svg"><path d="M688.45,631.49c0,9.22-6.26,15.68-16.55,15.68h-11.71v15.95h-7.6v-47.1h19.31c10.3,0,16.55,6.19,16.55,15.48ZM680.71,631.56c0-4.78-2.89-8.28-9.08-8.28h-11.44v16.62h11.44c6.19,0,9.08-3.57,9.08-8.34Z"/><path d="M731.11,626.11v37.01h-7.6v-6.19c-2.69,4.24-7.13,7-12.92,7-9.89,0-17.09-8.01-17.09-19.31s7.34-19.31,17.03-19.31c5.85,0,10.29,2.89,12.99,7.13v-6.33h7.6ZM723.58,644.62c0-7.07-4.91-12.04-11.37-12.04s-11.03,4.98-11.03,12.04,4.64,12.04,11.03,12.04,11.37-4.91,11.37-12.04Z"/><path d="M762.14,625.51v7.74c-.67-.07-1.28-.14-2.29-.14-6.93,0-12.25,3.9-12.25,13.06v16.96h-7.6v-37.01h7.6v7.34c2.22-5.18,6.46-8.14,12.31-8.14.94,0,1.68.07,2.22.2Z"/><path d="M797.13,661.24c-2.02,1.21-6.33,2.69-10.56,2.69-7.6,0-13.53-4.78-13.53-15.01v-15.68h-6.86v-7.13h6.86v-8.41l7.6-1.68v10.09h15.21v7.13h-15.21v15.27c0,5.38,2.49,8.34,7.27,8.34,2.36,0,4.98-.81,7.87-1.82l1.34,6.19Z"/><path d="M839.46,644.62c0,11.1-8.41,19.31-19.18,19.31s-19.18-8.28-19.18-19.31,8.61-19.31,19.18-19.31,19.18,8.14,19.18,19.31ZM808.77,644.62c0,7.13,5.05,12.04,11.51,12.04s11.51-4.91,11.51-12.04-5.11-12.04-11.51-12.04-11.51,4.91-11.51,12.04Z"/><path d="M879.77,626.11v37.01h-7.6v-6.12c-2.62,4.24-6.59,6.93-12.31,6.93-8.21,0-13.12-5.45-13.12-14.47v-23.35h7.6v21.8c0,5.72,2.42,8.75,7.94,8.75,6.33,0,9.89-4.24,9.89-11.37v-19.18h7.6Z"/><path d="M916.64,661.24c-2.02,1.21-6.33,2.69-10.56,2.69-7.6,0-13.53-4.78-13.53-15.01v-15.68h-6.86v-7.13h6.86v-8.41l7.6-1.68v10.09h15.21v7.13h-15.21v15.27c0,5.38,2.49,8.34,7.27,8.34,2.36,0,4.98-.81,7.87-1.82l1.34,6.19Z"/><path d="M980.17,626.11v37.01h-7.6v-6.19c-2.69,4.24-7.13,7-12.92,7-9.89,0-17.09-8.01-17.09-19.31s7.34-19.31,17.03-19.31c5.85,0,10.29,2.89,12.99,7.13v-6.33h7.6ZM972.63,644.62c0-7.07-4.91-12.04-11.37-12.04s-11.03,4.98-11.03,12.04,4.64,12.04,11.03,12.04,11.37-4.91,11.37-12.04Z"/><path d="M1022.1,626.11l-13.32,37.01h-9.22l-13.32-37.01h8.07l9.82,29.07,9.89-29.07h8.08Z"/><path d="M1062.54,646.7h-30.08c.61,6.8,5.38,10.56,11.58,10.56,4.44,0,8.14-1.88,9.89-5.52h7.87c-2.89,8.28-9.96,12.18-17.83,12.18-11.24,0-19.24-8.07-19.24-19.24s7.94-19.38,19.11-19.38c11.91,0,19.45,9.22,18.71,21.4ZM1032.87,640.51h21.53c-1.14-5.05-4.98-8.61-10.56-8.61s-9.69,3.63-10.97,8.61Z"/><path d="M1068.73,644.62c0-11.04,8.21-19.31,19.24-19.31,8.75,0,16.49,5.32,18.17,14.27h-7.87c-1.41-4.64-5.52-7.2-10.3-7.2-6.86,0-11.57,5.11-11.57,12.25s4.85,12.25,11.51,12.25c4.85,0,8.95-2.69,10.36-7.27h7.87c-1.75,9.15-9.56,14.33-18.24,14.33-10.97,0-19.18-8.28-19.18-19.31Z"/><path d="M1169.74,626.11v36.54c0,11.04-6.93,18.1-17.9,18.1-8.82,0-16.82-4.58-18.44-13.79h7.87c1.28,4.78,5.38,7,10.36,7,6.8,0,10.5-3.84,10.5-11.04v-6.33c-2.76,4.11-7.2,6.93-12.92,6.93-9.89,0-17.09-8.01-17.09-19.11s7.34-19.11,17.09-19.11c5.72,0,10.23,2.89,12.92,7.13v-6.33h7.6ZM1162.2,644.41c0-6.86-4.91-11.84-11.37-11.84s-11.03,4.98-11.03,11.84,4.64,11.84,11.03,11.84,11.37-4.91,11.37-11.84Z"/><path d="M1215.77,644.62c0,11.1-8.41,19.31-19.18,19.31s-19.18-8.28-19.18-19.31,8.61-19.31,19.18-19.31,19.18,8.14,19.18,19.31ZM1185.09,644.62c0,7.13,5.05,12.04,11.51,12.04s11.51-4.91,11.51-12.04-5.11-12.04-11.51-12.04-11.51,4.91-11.51,12.04Z"/><path d="M1256.08,626.11v37.01h-7.6v-6.12c-2.62,4.24-6.59,6.93-12.31,6.93-8.21,0-13.12-5.45-13.12-14.47v-23.35h7.6v21.8c0,5.72,2.42,8.75,7.94,8.75,6.33,0,9.89-4.24,9.89-11.37v-19.18h7.6ZM1232.66,621.06l-4.1-4.11,10.97-11.03,11.03,11.03-4.17,4.11-6.86-7.34-6.86,7.34Z"/><path d="M1292.96,661.24c-2.02,1.21-6.33,2.69-10.56,2.69-7.6,0-13.53-4.78-13.53-15.01v-15.68h-6.86v-7.13h6.86v-8.41l7.6-1.68v10.09h15.21v7.13h-15.21v15.27c0,5.38,2.49,8.34,7.27,8.34,2.36,0,4.98-.81,7.87-1.82l1.34,6.19Z"/><path d="M962.69,382.62l-44.2,119.44c-3.15,8.57-8.12,8.53-11.23-.08l-44.73-119.36h100.17Z"/><path d="M669.29,423.46c-6.22-15.75-15.44-29.17-27.66-40.28-22.86-20.85-52.05-31.28-87.58-31.28h-117.49l12.12,42.94h7.26v205.91h98.1c17.65,0,33.88-2.6,48.71-7.81,14.82-5.21,27.78-12.92,38.87-23.11,12.23-11.1,21.44-24.53,27.66-40.29,6.23-15.75,9.34-33.49,9.34-53.2s-3.11-37.11-9.34-52.88ZM623.89,518.49c-4.76,10.64-10.83,18.98-18.2,24.98-7.37,6.01-15.58,10.02-24.65,12.06-9.06,2.05-18.01,3.06-26.85,3.06h-50.66v-163.87h50.66c8.6,0,17.45,1.03,26.52,3.06,9.06,2.05,17.33,6.01,24.82,11.91,7.47,5.89,13.6,14.22,18.36,24.99,4.75,10.76,7.13,24.76,7.13,41.98s-2.38,31.16-7.13,41.82Z"/><path d="M820.51,405.85l57.38,142.07c.16.45.36.86.56,1.25l-57.94-143.32Z"/><path d="M891.58,564.81c-5.66-3.84-10.26-9.18-13.13-15.64-.2-.4-.41-.81-.56-1.25l-57.38-142.07-.24-.56-9.18-22.67h-25.05c-15.19,0-28.89,9.29-34.51,23.43l-64.8,162.83c-2.21,2.75-3.45,4.54-3.73,4.96l29.96,20.6c1.54-2.21,37.71-52.83,110.95-55.16l5.24,13.99c4.03,10.76,14.33,17.89,25.82,17.89h57.39c-7.56,0-14.75-2.3-20.77-6.35ZM755.53,517.56l24.37-65.8c3.19-8.61,8.12-8.56,11.24.04l19.44,51.89c-20.98,1.97-39.31,7.16-55.04,13.88Z"/><path d="M1138.45,569.34l-66.1-163.49c-2.83-7.03-7.63-12.8-13.66-16.88-6.02-4.04-13.21-6.35-20.81-6.35h-25.29l-65.7,165.1c-5.66,14.14-19.31,23.43-34.54,23.43h56c11.54,0,21.85-7.18,25.86-18l5.16-13.93c40.13.9,69.28,16.29,87.85,30.6.57.45,1.14.89,1.69,1.33,14.41,11.45,21.98,21.88,22.91,23.21l30.02-20.53c-.27-.4-1.39-2.01-3.38-4.5ZM1012.57,503.54l19.18-51.78c3.2-8.61,8.13-8.56,11.24.04l24.33,64.93c-15.72-6.48-33.95-11.42-54.74-13.19Z"/><path d="M1126.82,584.1l-14.96,10.33s-.03-.04-.05-.07l15.01-10.26Z"/><path d="M1345.72,380.59v170.27c0,23.95-19.42,43.35-43.34,43.35l-97.22-140.57v78.7l-42.72,29.95v-138.35c0-23.95,19.4-43.35,43.34-43.35l97.22,140.56v-140.56h42.72Z"/><path d="M1402.92,420.9h-33.62v-40.25h123.25l11.31,40.25h-58.2v136.48c0,23.6-19.13,42.73-42.73,42.73h0v-179.21Z"/></svg></span>
-  <div>DAVANT × Coble · Programme de transformation IA · Document de travail, usage interne, version 1 du 14 septembre 2026.</div>
+  <div>DAVANT × Coble · Programme de transformation IA · Document de travail, usage interne, version 1.1 du 14 septembre 2026.</div>
   <div>Prochain jalon : jeudi 1<sup>er</sup> octobre 2026, 9h00, Best Western Le Gallice, Aix-en-Provence.</div>
 </footer>
 
@@ -1017,6 +1069,20 @@ details.ann .in .prompt .lbl { color: var(--blue-glow); }
     });
   }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
   secs.forEach((s) => s && spy.observe(s));
+
+  const openTarget = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const det = el.closest('details') || (el.tagName === 'DETAILS' ? el : null);
+    if (det) det.open = true;
+    el.classList.add('in');
+    el.querySelectorAll('.rv, .rv-group').forEach((n) => n.classList.add('in'));
+  };
+  window.addEventListener('hashchange', openTarget);
+  document.querySelectorAll('a[href^="#"]').forEach((a) => a.addEventListener('click', () => setTimeout(openTarget, 0)));
+  openTarget();
 
   window.addEventListener('beforeprint', () => {
     document.querySelectorAll('.rv, .rv-group').forEach((el) => el.classList.add('in'));
